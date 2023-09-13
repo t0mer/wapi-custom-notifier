@@ -76,7 +76,7 @@ This will list all the contacts and groups chats in json format:
 ## Add the custom notifier to homeassistant
 To add wapi reposiroty to HACS, Open you Homeassistant application and navigate to HACS.
 
-1. Then click on Integrations.
+1. Click on Integrations.
 
 2. On the upper right corner, click the three dots and select Custom repositories.
 
