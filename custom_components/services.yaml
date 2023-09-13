@@ -1,0 +1,8 @@
+notify:
+  name: wapi-custom-notifier
+  description: Send a notification using wapi
+  fields:
+    message:
+      name: Message
+      description: The message to send
+      example: 'Hello, World!'
