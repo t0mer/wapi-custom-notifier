@@ -84,15 +84,15 @@ To add wapi reposiroty to HACS, Open you Homeassistant application and navigate 
 
 4. Under category, select Integration and click ADD.
 
-5. You can now see that the *Matterbridge" was added to the custom repositories list.
+5. You can now see that the *wapi" was added to the custom repositories list.
 
-6. can now add matterbridge custom component from HACS.
+6. can now add wapi custom component from HACS.
 
 ## Configure homeassistant to use wapi.
 First, afetr the custom component installation, make sure you restarted home assistant.
 
 ### configuration.yaml
-To work with matterbridge, add the following code to your configuration.yaml file:
+To work with wapi, add the following code to your configuration.yaml file:
 ```yaml
 
 notify:
@@ -124,4 +124,4 @@ And click *Call Service*
 
 # Notes
 * wapi is not officially supported by Whatsapp. It's an open source written in GO.
-* In the matterbridge configuration you can add many gateways to send notifications to different groups by using multiple gateways. This is the reason that you can specify gateway name as target in the payload.
+* In the wapi configuration you can add many gateways to send notifications to different groups by using multiple gateways. This is the reason that you can specify gateway name as target in the payload.
