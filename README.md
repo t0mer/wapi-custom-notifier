@@ -23,7 +23,7 @@ services:
     environment:
       #- API_KEY= #Optional - Recomended to enable when goint to prod
       - BASE_WEBHOOK_URL=http://localhost:3000/localCallbackExample
-      - ENABLE_LOCAL_CALLBACK_EXAMPLE=FALSE # OPTIONAL, NOT RECOMMENDED TO ENABLE FOR PRODUCTION
+      - ENABLE_LOCAL_CALLBACK_EXAMPLE=TRUE # OPTIONAL, NOT RECOMMENDED TO ENABLE FOR PRODUCTION. Remove after QR scan
       - MAX_ATTACHMENT_SIZE=5000000 # IN BYTES
       - SET_MESSAGES_AS_SEEN=FALSE # WILL NOT MARK THE MESSAGES AS READ AUTOMATICALLY
       # ALL CALLBACKS: auth_failure|authenticated|call|change_state|disconnected|group_join|group_leave|group_update|loading_screen|media_uploaded|message|message_ack|message_create|message_reaction|message_revoke_everyone|qr|ready|contact_changed
