@@ -7,6 +7,7 @@ import voluptuous as vol
 from homeassistant.components.notify import (
     ATTR_TARGET,
     ATTR_TITLE,
+    ATTR_DATA,
     PLATFORM_SCHEMA,
     BaseNotificationService,
 )
@@ -57,23 +58,18 @@ class MatterNotificationService(BaseNotificationService):
     def send_message(self, message="", **kwargs):
         title = kwargs.get(ATTR_TITLE)
         chatId = kwargs.get(ATTR_TARGET)
+        data = kwargs.get(ATTR_DATA)
 
-        found_url = None
-        url_matches = re.search("(?P<url>https?://[^\s]+)", message)
-        if url_matches:
-            found_url = url_matches.group("url")
-            message = message.replace(found_url, "")
-
-        data = {
+        msg_data = {
             "content": "*" + title + "* \n" + message,
             "chatId": chatId,
             "contentType": "string",
         }
-        self.__send(data)
+        self.__send(msg_data)
 
-        if found_url:
+        if data["media_url"]:
             media_data = {
-                "content": found_url,
+                "content": data["media_url"],
                 "chatId": chatId,
                 "contentType": "MessageMediaFromURL"
             }
