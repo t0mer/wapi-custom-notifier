@@ -62,13 +62,14 @@ class MatterNotificationService(BaseNotificationService):
         url_matches = re.search("(?P<url>https?://[^\s]+)", message)
         if url_matches:
             found_url = url_matches.group("url")
+            new_message = message.replace(found_url, "")
 
         data = {
             "content": "*" + title + "* \n" + message,
             "chatId": chatId,
             "contentType": "string",
         }
-        self.send(data)
+        self.__send(data)
 
         if found_url:
             media_data = {
@@ -76,7 +77,7 @@ class MatterNotificationService(BaseNotificationService):
                 "chatId": chatId,
                 "contentType": "MessageMediaFromURL"
             }
-            self.send(media_data)
+            self.__send(media_data)
 
 
 
