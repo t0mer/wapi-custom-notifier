@@ -1,12 +1,10 @@
 {
-    "domain": "wapi",
-    "name": "wapi notifier basde on https://github.com/chrishubert/whatsapp-api and can send notifications to whatsapp groups and contacts",
-    "codeowners": [
-    "@t0mer"
-    ],
-    "documentation": "https://github.com/t0mer/wapi-custom-notifier",
-    "iot_class": "local_polling",
-    "issue_tracker": "https://github.com/t0mer/wapi-custom-notifier",
-    "requirements": ["requests"],
-    "version": "0.1.0"
+  "domain": "wapi",
+  "name": "wapi notifier based on https://github.com/chrishubert/whatsapp-api and can send notifications to whatsapp groups and contacts",
+  "codeowners": ["@t0mer"],
+  "documentation": "https://github.com/t0mer/wapi-custom-notifier",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/t0mer/wapi-custom-notifier",
+  "requirements": ["requests"],
+  "version": "0.1.0"
 }
