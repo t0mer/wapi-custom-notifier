@@ -62,7 +62,7 @@ class MatterNotificationService(BaseNotificationService):
         url_matches = re.search("(?P<url>https?://[^\s]+)", message)
         if url_matches:
             found_url = url_matches.group("url")
-            new_message = message.replace(found_url, "")
+            message = message.replace(found_url, "")
 
         data = {
             "content": "*" + title + "* \n" + message,
