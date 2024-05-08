@@ -1,5 +1,4 @@
 import logging
-import re
 
 import homeassistant.helpers.config_validation as cv
 import requests
