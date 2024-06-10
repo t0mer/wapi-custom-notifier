@@ -8,7 +8,7 @@
 * When using your own number to send the notifications it will act like your are sending messages to yourself. that way no alert will popup. Consider using other phone number for that.
 
 ## Getting started
-### Setting up *whatsapp-api* 
+### Setting up *whatsapp-api*
 1.  create *docker-compose.yaml* file and paste the following content:
 ```yaml
 version: '3.8'
@@ -106,7 +106,7 @@ notify:
 Save the file and restart Home-assistant.
 
 ### Sending test notification
-In Home assistant, under Developer tools go to services and find wapi notification service. 
+In Home assistant, under Developer tools go to services and find wapi notification service.
 
 Insert the following lines:
 
@@ -117,9 +117,25 @@ data:
   title: Your Garage Door Friend
   target: xxxxxxxxxx@c.us #Can be contact or group chat id
 
-
 ```
 And click *Call Service*
+
+
+To send media (images and video), you can also send a `media_url` in the data payload. Note that the media must be accessible by the whastapp-api container.
+Multiple media files are now supported. Use the multiline feature as shown below in order to use it.
+
+
+```yaml
+service: notify.wapi_whatsapp_notifire
+data:
+  message: The garage door has been open for 10 minutes.
+  title: Your Garage Door Friend
+  target: xxxxxxxxxx@c.us #Can be contact or group chat id
+  data:
+    media_url: |
+      https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example
+      https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example
+```
 
 
 # Notes
