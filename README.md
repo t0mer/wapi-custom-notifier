@@ -122,6 +122,7 @@ And click *Call Service*
 
 
 To send media (images and video), you can also send a `media_url` in the data payload. Note that the media must be accessible by the whastapp-api container.
+Multiple media files are now supported. Use the multiline feature as shown below in order to use it.
 
 
 ```yaml
@@ -131,7 +132,8 @@ data:
   title: Your Garage Door Friend
   target: xxxxxxxxxx@c.us #Can be contact or group chat id
   data:
-    media_url:
+    media_url: |
+      https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example
       https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example
 ```
 

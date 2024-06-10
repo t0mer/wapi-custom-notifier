@@ -67,12 +67,14 @@ class MatterNotificationService(BaseNotificationService):
         self.__send(msg_data)
 
         if data["media_url"]:
-            media_data = {
-                "content": data["media_url"],
-                "chatId": chatId,
-                "contentType": "MessageMediaFromURL"
-            }
-            self.__send(media_data)
+            media_urls = data["media_url"].splitlines()
+            for url in media_urls:
+                media_data = {
+                    "content": url,
+                    "chatId": chatId,
+                    "contentType": "MessageMediaFromURL"
+                }
+                self.__send(media_data)
 
 
 
