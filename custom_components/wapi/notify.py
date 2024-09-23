@@ -66,7 +66,7 @@ class MatterNotificationService(BaseNotificationService):
         }
         self.__send(msg_data)
 
-        if data["media_url"]:
+        if data is not None and data["media_url"] is not None:
             media_urls = data["media_url"].splitlines()
             for url in media_urls:
                 media_data = {
