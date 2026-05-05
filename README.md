@@ -128,10 +128,11 @@ Multiple media files are now supported. Use the multiline feature as shown below
 ```yaml
 service: notify.wapi_whatsapp_notifire
 data:
-  message: The garage door has been open for 10 minutes.
+  message: The garage door has been open for 10 minutes. #messages can't be empty but if you want to send images only just put a space " " as message
   title: Your Garage Door Friend
   target: xxxxxxxxxx@c.us #Can be contact or group chat id
   data:
+    ascaption: true #optional, attaches the title and message as caption to the first image othwise text is independent
     media_url: |
       https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example
       https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example
